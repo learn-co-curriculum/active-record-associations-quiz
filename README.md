@@ -21,7 +21,7 @@ A Pokémon trainer uses a Pokedex to help them identify Pokémon. If you have yo
 
 (X) One-to-one ( ) One-to-many ( ) Many-to-many ( ) None of the Above
 
-?: A Pokémon trainer can hone their Pokémons' skills at a gym. Each Pokémon trainer can train at multiple gyms. What type of relationship would be best to use?
+?: A Pokémon trainer can hone their Pokémons' skills at a gym. Each Pokémon trainer can train at multiple gyms. What type of relationship would be best to use between `Trainer` and `Gym`?
 
 ( ) One-to-one (X) One-to-many ( ) Many-to-many ( ) None of the Above
 
