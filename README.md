@@ -6,7 +6,7 @@
 
 ?:
 
-![Pokémon Trainer with 6 Pokémon](https://curriculum-content.s3.amazonaws.com/active-record-associations/quiz/ar-associations-Pokémon.jpg)
+![Pokémon Trainer with 6 Pokémon](https://curriculum-content.s3.amazonaws.com/active-record-associations/quiz/ar-associations-pokemon.jpg)
 
 Imagine that you are a Pokémon trainer. A Pokémon trainer can carry up to 6 Pokémon at a time. If you were to have a model for `Trainer` and a model for `Pokemon`, what type of relationship would be best to use?
 
