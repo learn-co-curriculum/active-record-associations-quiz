@@ -58,6 +58,9 @@ end
 
 ?:
 
+![Pokémon Types. Design Credits: www.vecteezy.com](https://curriculum-content.s3.amazonaws.com/active-record-associations/quiz/ar-association-pokemon-types.jpg)
+
+
 ```ruby
 class Pokemon < ActiveRecord::Base
   belongs_to :trainer
@@ -105,6 +108,8 @@ end
 (X) True ( ) False
 
 ?:
+
+![A Water Type Pokémon: Lapras](https://curriculum-content.s3.amazonaws.com/active-record-associations/quiz/ar-associations-lapras.gif)
 
 ```ruby
 class Pokemon < ActiveRecord::Base
@@ -160,6 +165,7 @@ class Badge < ActiveRecord::Base
   belongs_to :leader
 end
 ```
+
 ?: A Pokémon trainer can have many `Skill`s through `Pokemon`?
 
 (X) True ( ) False
