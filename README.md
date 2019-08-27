@@ -68,11 +68,11 @@ class Pokemon < ActiveRecord::Base
 end
 
 class Trainer < ActiveRecord::Base
-  has_many :Pokémon
+  has_many :Pokemon
 end
 
 class Type < ActiveRecord::Base
-  has_many :Pokémon
+  has_many :Pokemon
 end
 ```
 
