@@ -16,7 +16,6 @@ Imagine that you are a Pokémon trainer. A Pokémon trainer can carry up to 6 Po
 
 ![Pokémon Trainer's Pokedex. Design Credits: www.vecteezy.com](https://curriculum-content.s3.amazonaws.com/active-record-associations/quiz/ar-associations-pokedex.jpg)
 
-
 A Pokémon trainer uses a Pokedex to help them identify Pokémon. If you have your `Trainer` model, and a model for a `Pokedex`, what type of relationship would be best to use?
 
 (X) One-to-one ( ) One-to-many ( ) Many-to-many ( ) None of the Above
@@ -25,33 +24,33 @@ A Pokémon trainer uses a Pokedex to help them identify Pokémon. If you have yo
 
 ( ) One-to-one (X) One-to-many ( ) Many-to-many ( ) None of the Above
 
-?: If each city has only 1 gym and each gym has only 1 gym leader, how could you write this association?
+?: If each town has only 1 gym and each gym has only 1 gym leader, how could you write this association?
 
 ( )
 ```ruby
 class Gym < ActiveRecord::Base
-  belongs_to :city
+  belongs_to :town
   has_many :leaders
 end
 ```
 ( )
 ```ruby
 class Gym < ActiveRecord::Base
-  has_many :cities
+  has_many :towns
   belongs_to :leader
 end
 ```
 ( )
 ```ruby
 class Gym < ActiveRecord::Base
-  has_many :cities
+  has_many :towns
   has_many :leaders
 end
 ```
 (X)
 ```ruby
 class Gym < ActiveRecord::Base
-  belongs_to :city
+  belongs_to :town
   belongs_to :leader
 end
 ```
@@ -122,7 +121,7 @@ class Skill < ActiveRecord::Base
 end
 ```
 
-Gym leader Misty specializes in training Pokémon with the _water_ type. Based on the associations above, if she wanted to teach a new skill to one of her Pokémon, which could she choose?
+Gym leader Misty specializes in training Pokémon with a _water_ type. Based on the associations in the code above, if Misty wanted to teach a new skill to one of her Pokémon, all of which are water type Pokémon, which could she choose?
 
 (X) Waterfall ( ) Razor Leaf ( ) Fire Spin ( ) Spark
 
@@ -135,9 +134,9 @@ class Pokemon < ActiveRecord::Base
 end
 ```
 
-What association should be added to the `Pokemon` model so that `Skill`s can be attributed to it?
+All Pokémon can learn skills. What association should be added to the above `Pokemon` model so that `Skill`s can be attributed to it?
 
-(X) `belongs_to :skill` ( ) `has_many :skills, through :type` (X) `has_many: skills` ( ) None of the Above
+( ) `belongs_to :skill` ( ) `has_many :skills, through :type` (X) `has_many: skills` ( ) None of the Above
 
 ?: A Pokémon trainer acquires a new badge each time they defeat a gym leader in battle. How should the `Badge` model be written so that it's associated to the `Gym` model?
 
