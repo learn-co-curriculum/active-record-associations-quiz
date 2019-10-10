@@ -98,7 +98,10 @@ end
 (X)
 ```ruby
 class Trainer < ActiveRecord::Base
-  has_many :types, through: Pokémon
+  # é is supported, but for the sake of color-formatters etc. we're going to
+  # use 'e'
+  has_many :types, through: Pokemon
+simplicity
 end
 ```
 
