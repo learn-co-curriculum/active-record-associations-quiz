@@ -20,7 +20,7 @@ A Pokémon trainer uses a Pokedex to help them identify Pokémon. If you have yo
 
 (X) One-to-one ( ) One-to-many ( ) Many-to-many ( ) None of the Above
 
-?: A Pokémon trainer can hone their Pokémons' skills at a gym. Each Pokémon trainer can train at multiple gyms. What type of relationship would be best to use between `Trainer` and `Gym`?
+?: A Pokémon trainer can hone their Pokémons' skills at a gym. A Pokémon trainer can train at multiple gyms. What type of relationship would be best to use between `Trainer` and `Gym`?
 
 ( ) One-to-one (X) One-to-many ( ) Many-to-many ( ) None of the Above
 
@@ -75,7 +75,7 @@ class Type < ActiveRecord::Base
 end
 ```
 
-A Pokémon has a "type" associated with it. For this example, let's imagine that Pokémon only have a single type (ice, fire, water, grass, earth, etc). The type of Pokémon determines what skills can be learned, and what strengths and weaknesses it can have, and therefor are associated with the trainer. What type of relationship can be created between `Trainer` and `Type`?
+A Pokémon has a "type" associated with it. For this example, let's imagine that Pokémon only have a single type (ice, fire, water, grass, earth, etc). The type of Pokémon determines what skills can be learned, and what strengths and weaknesses it can have, and therefore are associated with the trainer. What type of relationship can be created between `Trainer` and `Type`?
 
 ( )
 ```ruby
@@ -98,35 +98,14 @@ end
 (X)
 ```ruby
 class Trainer < ActiveRecord::Base
-  # é is supported, but for the sake of color-formatters etc. we're going to
-  # use 'e'
+  # note: although the é is supported by Ruby, we're going to use 'e' for the sake of simplicity
   has_many :types, through: Pokemon
-simplicity
 end
 ```
 
 ?: A Pokedex is a mini-encyclopedia of Pokémon species, types, evolutions, and moves. A `Pokedex` model would have `has_many` relationship for `Pokemon`?
 
 (X) True ( ) False
-
-?:
-
-![A Water Type Pokémon: Lapras](https://curriculum-content.s3.amazonaws.com/active-record-associations/quiz/ar-associations-lapras.gif)
-
-```ruby
-class Pokemon < ActiveRecord::Base
-  belongs_to :trainer
-  belongs_to :type
-end
-
-class Skill < ActiveRecord::Base
-  belongs_to :type
-end
-```
-
-Gym leader Misty specializes in training Pokémon with a _water_ type. Based on the associations in the code above, if Misty wanted to teach a new skill to one of her Pokémon, all of which are water type Pokémon, which could she choose?
-
-(X) Waterfall ( ) Razor Leaf ( ) Fire Spin ( ) Spark
 
 ?:
 
