@@ -20,9 +20,9 @@ A Pokémon trainer uses a Pokedex to help them identify Pokémon. If you have yo
 
 (X) One-to-one ( ) One-to-many ( ) Many-to-many ( ) None of the Above
 
-?: A Pokémon trainer can hone their Pokémons' skills at a gym. A Pokémon trainer can train at multiple gyms. What type of relationship would be best to use between `Trainer` and `Gym`?
+?: A Pokémon trainer can hone their Pokémons' skills at a gym. A Pokémon trainer can train at multiple gyms and gyms can accept many trainers. What type of relationship would be best to use between `Trainer` and `Gym`?
 
-( ) One-to-one (X) One-to-many ( ) Many-to-many ( ) None of the Above
+( ) One-to-one ( ) One-to-many (X) Many-to-many ( ) None of the Above
 
 ?: If each town has only 1 gym and each gym has only 1 gym leader, how could you write this association?
 
@@ -120,7 +120,11 @@ All Pokémon can learn skills. What association should be added to the above `Po
 
 ( ) `belongs_to :skill` ( ) `has_many :skills, through :type` (X) `has_many: skills` ( ) None of the Above
 
-?: A Pokémon trainer acquires a new badge each time they defeat a gym leader in battle. How should the `Badge` model be written so that it's associated to the `Gym` model?
+?: A Pokémon trainer can have many `Skill`s through `Pokemon`?
+
+(X) True ( ) False
+
+?: A gym and gym leader are associated with a unique badge. If a trainer beats a gym leader, they acquire a badge. How should the `Badge` model be written so that it's associated to the `Gym` model?
 
 (X)
 ```ruby
@@ -140,15 +144,5 @@ class Badge < ActiveRecord::Base
   has_many :gyms, through :trainer
 end
 ```
-( )
-```ruby
-class Badge < ActiveRecord::Base
-  belongs_to :leader
-end
-```
-
-?: A Pokémon trainer can have many `Skill`s through `Pokemon`?
-
-(X) True ( ) False
 
 ???
