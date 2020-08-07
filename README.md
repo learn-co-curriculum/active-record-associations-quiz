@@ -67,11 +67,11 @@ class Pokemon < ActiveRecord::Base
 end
 
 class Trainer < ActiveRecord::Base
-  has_many :Pokemon
+  has_many :pokemon
 end
 
 class Type < ActiveRecord::Base
-  has_many :Pokemon
+  has_many :pokemon
 end
 ```
 
@@ -99,7 +99,7 @@ end
 ```ruby
 class Trainer < ActiveRecord::Base
   # note: although the é is supported by Ruby, we're going to use 'e' for the sake of simplicity
-  has_many :types, through: Pokemon
+  has_many :types, through: :pokemon
 end
 ```
 
@@ -118,7 +118,7 @@ end
 
 All Pokémon can learn skills. What association should be added to the above `Pokemon` model so that `Skill`s can be attributed to it?
 
-( ) `belongs_to :skill` ( ) `has_many :skills, through :type` (X) `has_many: skills` ( ) None of the Above
+( ) `belongs_to :skill` ( ) `has_many :skills, through: :type` (X) `has_many: skills` ( ) None of the Above
 
 ?: A Pokémon trainer can have many `Skill`s through `Pokemon`?
 
@@ -141,7 +141,7 @@ end
 ( )
 ```ruby
 class Badge < ActiveRecord::Base
-  has_many :gyms, through :trainer
+  has_many :gyms, through: :trainer
 end
 ```
 
